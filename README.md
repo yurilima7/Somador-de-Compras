@@ -5,7 +5,7 @@
 supermercado.</p>
 
 ## :books: Funcionalidades
-* Calculo da quantia de todos os produtos antes do ato de pagamento
+* Cálculo da quantia de todos os produtos antes do ato de pagamento
 
 ## :wrench: Tecnologias Utilizadas
 * Flutter
