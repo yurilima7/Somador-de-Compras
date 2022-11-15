@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:total_compras/App/Controllers/purchase_provider_impl.dart';
-import 'package:total_compras/App/Core/Styles/colors_styles.dart';
 import 'package:total_compras/App/Core/Styles/text_styles.dart';
+import 'package:total_compras/App/Core/Utils/messages.dart';
 import 'package:total_compras/App/Models/purchase.dart';
 import 'package:total_compras/App/Screens/Widgets/button.dart';
 import 'package:total_compras/App/Screens/Widgets/quantiity_form.dart';
@@ -103,15 +103,7 @@ class _FormInputState extends State<FormInput> {
                       });
                       productEC.clear();
                   } else {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        backgroundColor: ColorsStyles.error,
-                        content: Text(
-                          'Informe um valor válido!',
-                          style: context.textStyles.message,
-                        ),
-                      ),
-                    );
+                    Messages.showError('Informe um valor válido!');
                   }
                 } ,
                 title: 'Calcular',

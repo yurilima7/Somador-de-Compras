@@ -1,16 +1,26 @@
-# total_compras
+# Somador de Compras
 
-A new Flutter project.
+## :memo: Descrição do Projeto
+<p>A aplicação tem como finalidade realizar o cálculo rápido dos produtos que serão comprados em um
+supermercado.</p>
 
-## Getting Started
+## :books: Funcionalidades
+* Calculo da quantia de todos os produtos antes do ato de pagamento
 
-This project is a starting point for a Flutter application.
+## :wrench: Tecnologias Utilizadas
+* Flutter
 
-A few resources to get you started if this is your first Flutter project:
+## :computer: Bibliotecas e Ferramentas
+* Brasil Fields
+* Provider
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## :information_source: Como Usar
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Para executar corretamente esta aplicação você precisará:
+* Flutter já configurado
+
+## :memo: Licença
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes
+
+## :dart: Status do Projeto
+Concluído.
