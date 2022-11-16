@@ -3,8 +3,8 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:total_compras/App/Controllers/purchase_provider_impl.dart';
 import 'package:total_compras/App/Core/Styles/text_styles.dart';
-import 'package:total_compras/App/Screens/Widgets/card_form.dart';
-import 'package:total_compras/App/Screens/Widgets/form_input.dart';
+import 'package:total_compras/App/Screens/HomeScreen/Widgets/card_form.dart';
+import 'package:total_compras/App/Screens/HomeScreen/Widgets/form_input.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -31,7 +31,7 @@ class Home extends StatelessWidget {
               left: 20.0,
               right: 20.0,
               top: 5.0,
-              bottom: 5.0,
+              bottom: 10.0,
             ),
           
             child: Column(

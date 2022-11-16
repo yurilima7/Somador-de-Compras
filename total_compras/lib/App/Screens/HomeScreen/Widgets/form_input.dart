@@ -6,8 +6,8 @@ import 'package:total_compras/App/Controllers/purchase_provider_impl.dart';
 import 'package:total_compras/App/Core/Styles/text_styles.dart';
 import 'package:total_compras/App/Core/Utils/messages.dart';
 import 'package:total_compras/App/Models/purchase.dart';
-import 'package:total_compras/App/Screens/Widgets/button.dart';
-import 'package:total_compras/App/Screens/Widgets/quantiity_form.dart';
+import 'package:total_compras/App/Core/Widgets/button.dart';
+import 'package:total_compras/App/Screens/HomeScreen/Widgets/quantiity_form.dart';
 import 'package:validatorless/validatorless.dart';
 
 class FormInput extends StatefulWidget {

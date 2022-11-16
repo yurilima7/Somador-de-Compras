@@ -3,7 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:total_compras/App/Controllers/purchase_provider_impl.dart';
 import 'package:total_compras/App/Core/Theme/theme_settings.dart';
 import 'package:total_compras/App/Core/Utils/app_routes.dart';
-import 'package:total_compras/App/Screens/home.dart';
+import 'package:total_compras/App/Screens/HomeScreen/home.dart';
+import 'package:total_compras/App/Screens/InitialScreen/initial_screen.dart';
 
 GlobalKey <NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 GlobalKey<ScaffoldMessengerState> scaffoldMessengerKey =
@@ -24,6 +25,7 @@ class TotalPurchases extends StatelessWidget {
         theme: ThemeSettings.theme,
 
         routes: {
+          AppRoutes.initial: (context) => const InitialScreen(),
           AppRoutes.home: (context) => const Home(),
         },
       ),
