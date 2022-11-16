@@ -7,7 +7,7 @@ import 'package:total_compras/App/Core/Styles/text_styles.dart';
 import 'package:total_compras/App/Core/Utils/messages.dart';
 import 'package:total_compras/App/Models/purchase.dart';
 import 'package:total_compras/App/Core/Widgets/button.dart';
-import 'package:total_compras/App/Screens/HomeScreen/Widgets/quantiity_form.dart';
+import 'package:total_compras/App/Screens/HomeScreen/Widgets/quantity_form.dart';
 import 'package:validatorless/validatorless.dart';
 
 class FormInput extends StatefulWidget {
@@ -56,7 +56,7 @@ class _FormInputState extends State<FormInput> {
                     ),
                   ),
           
-                  const QuantiityForm(),
+                  const QuantityForm(),
                 ],
               ),
       

@@ -3,9 +3,10 @@ import 'package:provider/provider.dart';
 import 'package:total_compras/App/Controllers/purchase_provider_impl.dart';
 import 'package:total_compras/App/Core/Styles/colors_styles.dart';
 import 'package:total_compras/App/Core/Styles/text_styles.dart';
+import 'package:total_compras/App/Screens/HomeScreen/Widgets/icon_form.dart';
 
-class QuantiityForm extends StatelessWidget {
-  const QuantiityForm({Key? key}) : super(key: key);
+class QuantityForm extends StatelessWidget {
+  const QuantityForm({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,26 +32,14 @@ class QuantiityForm extends StatelessWidget {
     
         child: Row(
           children: [
-            IconButton(
-              onPressed: () => purchase.dec(),
-              icon: Icon(
-                Icons.remove,
-                color: ColorsStyles.secundary,
-              ),
-            ),
+            IconForm(action: () => purchase.dec(), icon: Icons.remove),
     
             Text(
               '${purchase.quantity}',
               style: context.textStyles.regular,
             ),
             
-            IconButton(
-              onPressed: () => purchase.inc(),
-              icon: Icon(
-                Icons.add,
-                color: ColorsStyles.secundary,
-              ),
-            ),
+            IconForm(action: () => purchase.inc(), icon: Icons.add),
           ],
         ),
       ),
