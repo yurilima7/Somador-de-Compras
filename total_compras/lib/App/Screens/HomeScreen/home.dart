@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:total_compras/App/Controllers/purchase_provider_impl.dart';
 import 'package:total_compras/App/Core/Styles/text_styles.dart';
+import 'package:total_compras/App/Core/Utils/number_format_br.dart';
 import 'package:total_compras/App/Screens/HomeScreen/Widgets/card_form.dart';
 import 'package:total_compras/App/Screens/HomeScreen/Widgets/form_input.dart';
 
@@ -19,7 +19,7 @@ class Home extends StatelessWidget {
         builder: (context, purchase, child) => Scaffold(
           appBar: AppBar(
             title: Text(
-              NumberFormat.simpleCurrency(locale: 'pt_BR').format(purchase.total),
+              NumberFormatBr().formatBR(purchase.total),
               style: context.textStyles.appBarTitle,
             ),
             centerTitle: true,
