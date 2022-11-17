@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:total_compras/App/Controllers/purchase_provider_impl.dart';
 import 'package:total_compras/App/Core/Styles/colors_styles.dart';
 import 'package:total_compras/App/Core/Styles/text_styles.dart';
-import 'package:total_compras/App/Screens/HomeScreen/Widgets/icon_form.dart';
+import 'package:total_compras/App/Core/Widgets/icon_form.dart';
 
 class QuantityForm extends StatelessWidget {
   const QuantityForm({Key? key}) : super(key: key);

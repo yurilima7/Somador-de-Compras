@@ -3,8 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:total_compras/App/Controllers/purchase_provider_impl.dart';
 import 'package:total_compras/App/Core/Styles/text_styles.dart';
 import 'package:total_compras/App/Core/Utils/number_format_br.dart';
-import 'package:total_compras/App/Screens/HomeScreen/Widgets/card_form.dart';
-import 'package:total_compras/App/Screens/HomeScreen/Widgets/form_input.dart';
+import 'package:total_compras/App/Core/Widgets/form_input.dart';
+import 'package:total_compras/App/Core/Widgets/list_form.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -35,15 +35,10 @@ class Home extends StatelessWidget {
             ),
           
             child: Column(
-              children: [
-                Expanded(
-                  child: ListView.builder(
-                    itemCount: purchase.purchasesLength,
-                    itemBuilder: (context, i) => CardForm(index: i),
-                  ),
-                ),
+              children: const [
+                ListForm(),
 
-                const FormInput(),
+                FormInput(),
               ],
             ),
           ),
