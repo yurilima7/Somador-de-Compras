@@ -27,11 +27,15 @@ class ListForm extends StatelessWidget {
                   builder: (context) => Alert(index: i),
                 ),
 
-                background: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    color: ColorsStyles.delete,
-                    child: Icon(Icons.delete, color: ColorsStyles.primary,),
+                background: ClipRRect(
+                  borderRadius: BorderRadius.circular(20.0),
+                  
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      color: ColorsStyles.delete,
+                      child: Icon(Icons.delete, color: ColorsStyles.primary,),
+                    ),
                   ),
                 ),
 
@@ -46,7 +50,7 @@ class ListForm extends StatelessWidget {
             : Center(
               child: Text(
                 'Sem dados no momento!',
-                style: context.textStyles.main,
+                style: context.textStyles.nullList,
               ),
             ),
       ),

@@ -17,16 +17,17 @@ class ThemeSettings {
       selectionColor: ColorsStyles.secundary,
     ),
 
-    cardTheme: const CardTheme(
-      elevation: 5,
-      shape: RoundedRectangleBorder(
+    cardTheme: CardTheme(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(
           Radius.circular(20.0),
         ),
       ),
+      color: ColorsStyles.secundary
     ),
 
     inputDecorationTheme: InputDecorationTheme(
+      isDense: true,
       labelStyle: TextStyles.i.regular,
 
       border: OutlineInputBorder(
@@ -63,7 +64,11 @@ class ThemeSettings {
       ),
     ),
 
-    
+    appBarTheme: AppBarTheme(
+      backgroundColor: ColorsStyles.secundary,
+      titleTextStyle: TextStyles.i.appBarTitle,
+      centerTitle: true,
+    ),
     
     scaffoldBackgroundColor: ColorsStyles.primary,
   );

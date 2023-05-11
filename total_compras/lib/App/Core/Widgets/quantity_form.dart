@@ -12,7 +12,7 @@ class QuantityForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<PurchaseProviderImpl>(
       builder: (context, purchase, child) =>  Container(
-        constraints: const BoxConstraints.tightFor(height: 58),
+        constraints: const BoxConstraints.tightFor(height: 49),
     
         margin: const EdgeInsets.only(
           left: 5.0,

@@ -6,7 +6,6 @@ import 'package:total_compras/App/Core/Utils/app_routes.dart';
 import 'package:total_compras/App/Screens/HomeScreen/home.dart';
 import 'package:total_compras/App/Screens/InitialScreen/initial_screen.dart';
 
-GlobalKey <NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 GlobalKey<ScaffoldMessengerState> scaffoldMessengerKey =
     GlobalKey<ScaffoldMessengerState>();
 
@@ -19,7 +18,6 @@ class TotalPurchases extends StatelessWidget {
       create: (_) => PurchaseProviderImpl(),
 
       child: MaterialApp(
-        navigatorKey: navigatorKey,
         scaffoldMessengerKey: scaffoldMessengerKey,
         debugShowCheckedModeBanner: false,
         theme: ThemeSettings.theme,

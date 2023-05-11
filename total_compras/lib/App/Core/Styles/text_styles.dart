@@ -19,8 +19,8 @@ class TextStyles {
   );
 
   TextStyle get appBarTitle => primaryRegular.copyWith(
-    color: ColorsStyles.secundary,
-    fontSize: 25,
+    color: ColorsStyles.primary,
+    fontSize: 22,
     fontWeight: FontWeight.bold,
   );
 
@@ -30,7 +30,7 @@ class TextStyles {
   );
 
   TextStyle get button => primaryRegular.copyWith(
-    color:  ColorsStyles.primary,
+    color:  ColorsStyles.secundary,
     fontSize: 20,
   );
 
@@ -38,6 +38,11 @@ class TextStyles {
     color:  ColorsStyles.secundary,
     fontSize: 14,
     fontWeight: FontWeight.bold,
+  );
+
+  TextStyle get nullList => primaryRegular.copyWith(
+    color:  ColorsStyles.secundary,
+    fontSize: 16,
   );
 
   TextStyle get regular => primaryRegular.copyWith(

@@ -11,7 +11,7 @@ class ColorsStyles {
   }
 
   static Color primary = Colors.white;
-  static Color secundary = const Color(0xFF5F14FE);
+  static Color secundary = const Color(0xFF1D1840);
   static Color error = Colors.redAccent;
   static Color delete = Colors.red;
 }

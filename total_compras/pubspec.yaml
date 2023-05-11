@@ -35,16 +35,15 @@ dependencies:
   validatorless: ^1.2.3
   brasil_fields: 1.6.0
   intl: ^0.17.0
-  flutter_native_splash: ^2.2.14
-  flutter_launcher_icons: ^0.10.0
-
+  flutter_native_splash: ^2.2.19 
+  flutter_launcher_icons: "^0.13.1"
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
 
 flutter_native_splash:
-  color: "#FFFFFF"
+  color: "#1D1840"
   image: "assets/icons/splash.png"
   android: true
   ios: true

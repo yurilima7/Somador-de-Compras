@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:total_compras/App/Core/Utils/navigator_routes.dart';
+import 'package:total_compras/App/Core/Styles/colors_styles.dart';
+import 'package:total_compras/App/Core/Utils/app_routes.dart';
 import 'package:total_compras/App/Core/Widgets/button.dart';
 
 class InitialScreen extends StatelessWidget {
@@ -8,22 +9,29 @@ class InitialScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorsStyles.secundary,
+    
       body: Padding(
-        padding: const EdgeInsets.only(
-          left: 20.0,
-          right: 20.0,
-          top: 20.0,
-          bottom: 10.0,
-        ),
-
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+        
+        child: Stack(
           children: [
-            Image.asset('assets/icons/splash.png', fit: BoxFit.cover,),
-
-            Button(
-              action: () => NavigatorRoutes().homeScren(),
-              title: 'Nova Compra',
+            Positioned.fill(
+              child: Image.asset('assets/icons/splash.png'),
+            ),
+      
+            Positioned(
+              left: 0,
+              right: 0,
+              bottom: 16,
+              
+              child: Button(
+                action: () => Navigator.of(context).pushNamedAndRemoveUntil(
+                  AppRoutes.home,
+                  (route) => false,
+                ),
+                title: 'Nova Compra',
+              ),
             ),
           ],
         ),
