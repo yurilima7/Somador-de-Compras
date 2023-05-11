@@ -93,7 +93,7 @@ class _FormInputState extends State<FormInput> {
                           Purchase(
                             productName: productEC.text.isNotEmpty 
                               ? productEC.text 
-                              : 'Produto não Informado',
+                              : 'Produto não informado',
                             price: 
                               UtilBrasilFields.converterMoedaParaDouble(priceEC.text),
                             quantity: purchase.quantity,

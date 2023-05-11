@@ -5,7 +5,7 @@ import 'package:total_compras/App/Controllers/purchase_provider.dart';
 import 'package:total_compras/App/Models/purchase.dart';
 
 class PurchaseProviderImpl with ChangeNotifier implements PurchaseProvider {
-  List<Purchase> _purchases = [];
+  final List<Purchase> _purchases = [];
   double _total = 0.0;
   int _quantity = 1;
 
