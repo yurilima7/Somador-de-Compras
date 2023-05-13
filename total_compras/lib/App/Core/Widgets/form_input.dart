@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:total_compras/App/Controllers/purchase_provider_impl.dart';
 import 'package:total_compras/App/Core/Styles/button_styles.dart';
+import 'package:total_compras/App/Core/Styles/colors_styles.dart';
 import 'package:total_compras/App/Core/Styles/text_styles.dart';
 import 'package:total_compras/App/Core/Utils/messages.dart';
 import 'package:total_compras/App/Models/purchase.dart';
@@ -27,7 +28,7 @@ class _FormInputState extends State<FormInput> {
 
     return Consumer<PurchaseProviderImpl>(
       builder: (context, purchase, child) => SizedBox(
-        height: 220,
+        height: 200,
         child: Form(
           key: formKey,
           
@@ -76,47 +77,47 @@ class _FormInputState extends State<FormInput> {
               ),
           
               const SizedBox(height: 15,),
-              
+
               SizedBox(
                 width: double.infinity,
 
-                child: OutlinedButton(
-                  style: context.buttonStyles.outButton,
+                child: ElevatedButton(
+                  style: context.buttonStyles.buttonHome,
                   onPressed: () async {
-                    final valid =
-                        formKey.currentState?.validate() ?? false;
-                        
-                    if(valid 
-                      && UtilBrasilFields.converterMoedaParaDouble(priceEC.text)>0)
-                      {
-                        await purchase.sumTotal(
-                          Purchase(
-                            productName: productEC.text.isNotEmpty 
-                              ? productEC.text 
-                              : 'Produto não informado',
-                            price: 
-                              UtilBrasilFields.converterMoedaParaDouble(priceEC.text),
-                            quantity: purchase.quantity,
-                            productTotal: 
-                                UtilBrasilFields.converterMoedaParaDouble(priceEC.text) *
-                                purchase.quantity,
-                          ),
-                        );
-                
-                        setState(() {
-                          priceEC = TextEditingController(
-                          text: UtilBrasilFields.obterReal(0.00, moeda: true));
-                        });
-                        productEC.clear();
-                    } else {
-                      Messages.showError('Informe um valor válido!');
-                    }
-                  },
+                      final valid =
+                          formKey.currentState?.validate() ?? false;
+                          
+                      if(valid 
+                        && UtilBrasilFields.converterMoedaParaDouble(priceEC.text)>0)
+                        {
+                          await purchase.sumTotal(
+                            Purchase(
+                              productName: productEC.text.isNotEmpty 
+                                ? productEC.text 
+                                : 'Produto não informado',
+                              price: 
+                                UtilBrasilFields.converterMoedaParaDouble(priceEC.text),
+                              quantity: purchase.quantity,
+                              productTotal: 
+                                  UtilBrasilFields.converterMoedaParaDouble(priceEC.text) *
+                                  purchase.quantity,
+                            ),
+                          );
                   
-                  child: Text(
-                    'Calcular',
-                    style: context.textStyles.button,
-                  ),
+                          setState(() {
+                            priceEC = TextEditingController(
+                            text: UtilBrasilFields.obterReal(0.00, moeda: true));
+                          });
+                          productEC.clear();
+                      } else {
+                        Messages.showError('Informe um valor válido!');
+                      }
+                    },
+              
+                    child: Text(
+                      'Calcular',
+                      style: context.textStyles.button.copyWith(color: ColorsStyles.primary),
+                    ),
                 ),
               ),
             ],
