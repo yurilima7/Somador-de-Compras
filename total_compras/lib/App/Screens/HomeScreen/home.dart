@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:total_compras/App/Controllers/purchase_provider_impl.dart';
+import 'package:total_compras/App/Core/Styles/colors_styles.dart';
+import 'package:total_compras/App/Core/Styles/text_styles.dart';
 import 'package:total_compras/App/Core/Utils/number_format_br.dart';
+import 'package:total_compras/App/Core/Widgets/alert.dart';
+import 'package:total_compras/App/Core/Widgets/card_form.dart';
 import 'package:total_compras/App/Core/Widgets/form_input.dart';
-import 'package:total_compras/App/Core/Widgets/list_form.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -31,10 +34,53 @@ class Home extends StatelessWidget {
             ),
           
             child: Column(
-              children: const [
-                ListForm(),
+              children: [
+                Expanded(
+                  child: Consumer<PurchaseProviderImpl>(
+                    builder: (context, purchase, child) => 
+                    purchase.purchasesLength > 0 ? ListView.builder(
+                        itemCount: purchase.purchasesLength,
+                        itemBuilder: (_, i) {
+                          
+                          return Dismissible(
+                            direction: DismissDirection.endToStart,
+                            key: UniqueKey(),
 
-                FormInput(),
+                            confirmDismiss: (direction) async => await showDialog(
+                              context: context,
+                              builder: (context) => Alert(index: i),
+                            ),
+
+                            background: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  color: ColorsStyles.delete,
+                                  child: Icon(Icons.delete, color: ColorsStyles.primary,),
+                                ),
+                              ),
+                            ),
+
+                            child: CardForm(
+                              name: purchase.purchases.elementAt(i).productName,
+                              price: purchase.purchases.elementAt(i).price,
+                              quantity: purchase.purchases.elementAt(i).quantity,
+                              total: purchase.purchases.elementAt(i).productTotal,
+                            ),
+                          );
+                        })
+                        : Center(
+                          child: Text(
+                            'Sem dados no momento!',
+                            style: context.textStyles.nullList,
+                          ),
+                        ),
+                  ),
+                ),
+
+                const FormInput(),
               ],
             ),
           ),

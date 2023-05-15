@@ -22,21 +22,6 @@ class ButtonStyles {
     ),
   );
 
-  ButtonStyle get outButton => OutlinedButton.styleFrom(
-    backgroundColor: ColorsStyles.primary,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(20),
-    ),
-    side: BorderSide(
-      color: ColorsStyles.secundary,
-      width: 3.0,
-    ),
-  ).copyWith(
-    padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-      const EdgeInsets.symmetric(vertical: 8.0), // Espaçamento vertical desejado
-    ),
-  );
-
   ButtonStyle get buttonHome => ElevatedButton.styleFrom(
     backgroundColor: ColorsStyles.secundary,
     shape: RoundedRectangleBorder(
