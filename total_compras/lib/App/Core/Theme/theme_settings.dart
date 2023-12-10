@@ -29,6 +29,7 @@ class ThemeSettings {
     inputDecorationTheme: InputDecorationTheme(
       isDense: true,
       labelStyle: TextStyles.i.regular,
+      hintStyle: TextStyles.i.regular,
 
       border: OutlineInputBorder(
         borderSide: BorderSide(
