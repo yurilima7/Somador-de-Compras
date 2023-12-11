@@ -13,6 +13,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
 
@@ -23,7 +24,7 @@ class Home extends StatelessWidget {
               NumberFormatBr().formatBR(purchase.total),
             ),
           ),
-
+          
           body: Padding(
             padding: const EdgeInsets.only(
               left: 20.0,
@@ -31,72 +32,54 @@ class Home extends StatelessWidget {
               top: 5.0,
               bottom: 10.0,
             ),
-
+          
             child: Column(
               children: [
                 Expanded(
                   child: Consumer<PurchaseProviderImpl>(
+                    builder: (context, purchase, child) => 
+                    purchase.purchasesLength > 0 ? ListView.builder(
+                        itemCount: purchase.purchasesLength,
+                        itemBuilder: (_, i) {
+                          
+                          return Dismissible(
+                            direction: DismissDirection.endToStart,
+                            key: UniqueKey(),
 
-                    builder: (context, purchase, child) =>
-                      purchase.purchasesLength > 0
+                            confirmDismiss: (direction) async => await showDialog(
+                              context: context,
+                              builder: (context) => Alert(index: i),
+                            ),
 
-                      ? ListView.builder(
-                          itemCount: purchase.purchasesLength,
-
-                          itemBuilder: (_, i) {
-                            
-                            return Dismissible(
-                              direction: DismissDirection.endToStart,
-                              key: UniqueKey(),
-
-                              confirmDismiss: (direction) async =>
-                              await showDialog(
-                                context: context,
-                                builder: (context) => Alert(index: i),
-                              ),
-
-                              background: ClipRRect(
-                                borderRadius: BorderRadius.circular(20.0),
-
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-
-                                  child: Container(
-                                    color: ColorsStyles.delete,
-
-                                    child: Icon(
-                                      Icons.delete,
-                                      color: ColorsStyles.primary,
-                                    ),
-                                  ),
+                            background: ClipRRect(
+                              borderRadius: BorderRadius.circular(20.0),
+                              
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  color: ColorsStyles.delete,
+                                  child: Icon(Icons.delete, color: ColorsStyles.primary,),
                                 ),
                               ),
-
-                              child: CardForm(
-                                name: purchase.purchases.elementAt(i)
-                                    .productName,
-                                price:
-                                    purchase.purchases.elementAt(i).price,
-                                quantity: purchase.purchases.elementAt(i)
-                                    .quantity,
-                                total: purchase.purchases.elementAt(i)
-                                    .productTotal,
-                              ),
-                            );
-                          },
-                        )
-                      : Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const SizedBox(height: 40),
-                            Text(
-                              'Sem dados no momento!',
-                              style: context.textStyles.nullList,
                             ),
-                          ],
+
+                            child: CardForm(
+                              name: purchase.purchases.elementAt(i).productName,
+                              price: purchase.purchases.elementAt(i).price,
+                              quantity: purchase.purchases.elementAt(i).quantity,
+                              total: purchase.purchases.elementAt(i).productTotal,
+                            ),
+                          );
+                        })
+                        : Center(
+                          child: Text(
+                            'Sem dados no momento!',
+                            style: context.textStyles.nullList,
+                          ),
                         ),
                   ),
                 ),
+
                 const FormInput(),
               ],
             ),
