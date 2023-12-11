@@ -56,6 +56,7 @@ class Home extends StatelessWidget {
                               
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
+                                
                                 child: Container(
                                   color: ColorsStyles.delete,
                                   child: Icon(Icons.delete, color: ColorsStyles.primary,),

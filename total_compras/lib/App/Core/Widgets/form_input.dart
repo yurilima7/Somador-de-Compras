@@ -7,7 +7,7 @@ import 'package:total_compras/App/Core/Styles/button_styles.dart';
 import 'package:total_compras/App/Core/Styles/colors_styles.dart';
 import 'package:total_compras/App/Core/Styles/text_styles.dart';
 import 'package:total_compras/App/Core/Utils/messages.dart';
-import 'package:total_compras/App/Core/Widgets/icon_form.dart';
+import 'package:total_compras/App/Core/Widgets/quantity_form.dart';
 import 'package:total_compras/App/Models/purchase.dart';
 import 'package:validatorless/validatorless.dart';
 
@@ -39,7 +39,6 @@ class _FormInputState extends State<FormInput> {
               Row(
                 children: [
                   Expanded(
-                    flex: 7,
                     child: TextFormField(                  
                       style: context.textStyles.regular,
                       controller: priceEC,
@@ -60,25 +59,11 @@ class _FormInputState extends State<FormInput> {
 
                   const SizedBox(width: 8,),
           
-                  Expanded(
-                    flex: 3,
-                    child: TextFormField(
-                      readOnly: true,
-                      textAlign: TextAlign.center,
-
-                      decoration: InputDecoration(
-                        labelText: '${purchase.quantity}',
-                        hintText: '${purchase.quantity}',
-                        floatingLabelBehavior: FloatingLabelBehavior.never,
-                        prefixIcon: IconForm(action: () => purchase.dec(), icon: Icons.remove),
-                        suffixIcon: IconForm(action: () => purchase.inc(), icon: Icons.add),
-                      ),
-                    ),
-                  ),
+                  const QuantityForm()
                 ],
               ),
       
-              const SizedBox(height: 15,),
+              const SizedBox(height: 15),
       
               TextFormField(             
                 style: context.textStyles.regular,
